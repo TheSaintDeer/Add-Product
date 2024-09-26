@@ -7,6 +7,9 @@ from . import serializers, models
 
 
 class ProductList(APIView):
+    """
+        Send list of all products
+    """
 
     def get(self, request):
         queryset = get_list_or_404(models.Product)
@@ -18,6 +21,9 @@ class ProductList(APIView):
     
 
 class ProductCreate(APIView):
+    """
+        Create new Product item
+    """
 
     def post(self, request, format=None):
         if request.data:
